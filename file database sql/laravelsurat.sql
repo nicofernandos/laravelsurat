@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3308
--- Waktu pembuatan: 14 Jul 2025 pada 06.35
+-- Waktu pembuatan: 14 Jul 2025 pada 08.49
 -- Versi server: 10.4.32-MariaDB
 -- Versi PHP: 8.2.12
 
@@ -128,29 +128,6 @@ CREATE TABLE `password_reset_tokens` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `pegawai`
---
-
-CREATE TABLE `pegawai` (
-  `idpegawai` int(11) NOT NULL,
-  `nama` varchar(500) NOT NULL,
-  `nip` varchar(500) NOT NULL,
-  `email` varchar(500) NOT NULL,
-  `jabatan` varchar(500) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data untuk tabel `pegawai`
---
-
-INSERT INTO `pegawai` (`idpegawai`, `nama`, `nip`, `email`, `jabatan`) VALUES
-(2, 'Fahrul Adib', '1253212343245', 'fahruladib9@gmail.com', 'kepala'),
-(3, 'Hari', '0921412', 'hari@gmail.com', 'Staff'),
-(4, 'Melati', '05892015', 'melati@gmail.com', 'Staff');
-
--- --------------------------------------------------------
-
---
 -- Struktur dari tabel `personal_access_tokens`
 --
 
@@ -195,7 +172,8 @@ CREATE TABLE `surat` (
 --
 
 INSERT INTO `surat` (`idsurat`, `idkategori`, `nosurat`, `dari`, `tujuan`, `judulsurat`, `tanggal`, `deskripsisurat`, `file`, `namattd`, `fotottd`, `created_at`, `updated_at`, `qrcode`) VALUES
-(15, 7, 'SP-001', 'Kelurahan ABX', 'Kepala RT Desa ABX', 'Rapat seluruh RT', '2025-07-09', '<p>Diharapkan seluruh RT keluarahan ABX dapat menghadiri rapat ini</p>', 'surat/u0iEOpsOo1hkMG8f6375jMIcd5JwbD1xU0OYMjbG.pdf', 'Kepala Desa ABX', 'ttd/OdTqnkgBUvOYaQ6KrMwxLEvomGRWbsx5Lj3R2jRt.jpg', '2025-07-07 22:48:45', '2025-07-07 22:48:45', 'qrcode/qrcode-15.png');
+(15, 7, 'SP-001', 'Kelurahan ABX', 'Kepala RT Desa ABX', 'Rapat seluruh RT', '2025-07-09', '<p>Diharapkan seluruh RT keluarahan ABX dapat menghadiri rapat ini</p>', 'surat/u0iEOpsOo1hkMG8f6375jMIcd5JwbD1xU0OYMjbG.pdf', 'Kepala Desa ABX', 'ttd/OdTqnkgBUvOYaQ6KrMwxLEvomGRWbsx5Lj3R2jRt.jpg', '2025-07-07 22:48:45', '2025-07-07 22:48:45', 'qrcode/qrcode-15.png'),
+(16, 5, 'SR - 01901', 'Pemerintah', 'Kelurahan', 'Pengusuran Lahan', '2025-07-14', '<p>Berikut merupakan deskripsi surat&nbsp;</p>', 'surat/rA6v4iTkY6PnBHwYUlNK3WaGXGeQzUPoTmDmgkvk.pdf', 'Siska', 'ttd/eoB0F7DviVMmv1tqZwq9KBp7pO13ebjrZHWQg21b.jpg', '2025-07-13 21:41:24', '2025-07-13 21:46:21', 'qrcode/qrcode-16.png');
 
 -- --------------------------------------------------------
 
@@ -257,12 +235,6 @@ ALTER TABLE `password_reset_tokens`
   ADD PRIMARY KEY (`email`);
 
 --
--- Indeks untuk tabel `pegawai`
---
-ALTER TABLE `pegawai`
-  ADD PRIMARY KEY (`idpegawai`);
-
---
 -- Indeks untuk tabel `personal_access_tokens`
 --
 ALTER TABLE `personal_access_tokens`
@@ -305,12 +277,6 @@ ALTER TABLE `migrations`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
--- AUTO_INCREMENT untuk tabel `pegawai`
---
-ALTER TABLE `pegawai`
-  MODIFY `idpegawai` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-
---
 -- AUTO_INCREMENT untuk tabel `personal_access_tokens`
 --
 ALTER TABLE `personal_access_tokens`
@@ -320,7 +286,7 @@ ALTER TABLE `personal_access_tokens`
 -- AUTO_INCREMENT untuk tabel `surat`
 --
 ALTER TABLE `surat`
-  MODIFY `idsurat` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `idsurat` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT untuk tabel `users`
